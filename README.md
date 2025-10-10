@@ -26,7 +26,14 @@ Simple Store is a basic e-commerce project where users can browse products, add 
 1. Clone the repository:
    ```bash
    git clone https://github.com/Mohamad-Adwan/fullstack_Udacity3
-   cd my-store
+   *You should have mongoodb , Node.js , Angular
+   **in first terminal 
+   cd backend
+   node server.js 
+   **in second terminal
+   cd frontend
+   ng serve 
+
 ---
 
 ## 🛠 Tech Stack
