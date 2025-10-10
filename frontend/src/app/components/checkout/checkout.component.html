@@ -1,0 +1,14 @@
+<h2>Checkout</h2>
+
+<form (ngSubmit)="onSubmit()">
+  <label>Name:</label>
+  <input [(ngModel)]="name" name="name" required />
+
+  <label>Address:</label>
+  <input [(ngModel)]="address" name="address" required />
+
+  <label>Payment Method:</label>
+  <input [(ngModel)]="payment" name="payment" required />
+
+  <button type="submit">Submit Order</button>
+</form>

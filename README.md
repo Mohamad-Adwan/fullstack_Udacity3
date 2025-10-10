@@ -1,27 +1,143 @@
-# MyStore
+# 🛒 Simple Store - Angular + Node.js + MongoDB
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.1.
+Simple Store is a basic e-commerce project where users can browse products, add them to a cart, and place orders that are stored in MongoDB. This project uses Angular for the frontend and Node.js + Express + Mongoose for the backend.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
+- Display products with images and prices  
+- Cart management: Add,  Clear items  
+- Checkout page with customer information and payment method  
+- Orders are stored in MongoDB  
+- Order confirmation page  
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Requirements
+- Node.js ≥ 18  
+- npm or yarn  
+- MongoDB (local or Atlas)  
+- Angular CLI ≥ 18  
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🚀 Installation
 
-## Running unit tests
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Mohamad-Adwan/fullstack_Udacity3
+   cd my-store
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🛠 Tech Stack
+- **Node.js** + **Express**
+- **MongoDB**
+- **Angular CLI**
 
-## Running end-to-end tests
+---
+```
+my-store/
+├── backend/                  # Backend server (Node.js + Express)
+│   ├── models/               # Mongoose models
+│   │   └── Order.js
+│   │   └── Product.js
+│   ├── routes/               # API routes
+│   │   └── orderRoutes.js
+│   │   └── productRoutes.js
+│   ├── controllers/          # Controller logic
+│   │   └── orderController.js
+│   │   └── productController.js
+│   ├── server.js             # Main server entry point
+│   └── package.json
+│
+├── frontend/                 # Angular frontend
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── components/
+│   │   │   │   ├── checkout.component.ts
+│   │   │   │   ├── checkout.component.html
+│   │   │   │   ├── checkout.component.css
+│   │   │   │   ├── product-detail.component.ts
+│   │   │   │   ├── product-detail.component.html
+│   │   │   │   ├── product-detail.component.css
+│   │   │   │   ├── product-list.component.ts
+│   │   │   │   ├── product-list.component.html
+│   │   │   │   ├── product-list.component.css
+│   │   │   │   ├── confirmation.component.ts
+│   │   │   │   ├── confirmation.component.html
+│   │   │   │   └── confirmation.component.css
+│   │   │   ├── services/
+│   │   │   │   ├── cart.service.ts
+│   │   │   │   └── order.service.ts
+│   │   │   │   └── product.service.ts
+│   │   │   ├── app.module.ts
+│   │   │   └── app-routing.module.ts
+│   │   ├── assets/
+│   │   └── index.html
+│   ├── angular.json
+│   └── package.json
+│
+├── .gitignore
+├── README.md
+└── package.json              # Optional root package.json if monorepo
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
 
-## Further help
+---
+## My Mongoo
+### Order
+```
+const simpleOrderSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  address: { type: String, required: true },
+  payment: { type: String, required: true },
+  items: [
+    {
+      productId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
+      name: String,
+      price: Number,
+      image: String
+    }
+  ],
+  totalPrice: { type: Number, default: 0 },
+}, { timestamps: true });
+```
+### Product
+```
+const productSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  description: { type: String },
+  price: { type: Number, required: true, default: 0 },
+  imageUrl: { type: String },
+  countInStock: { type: Number, default: 0 }
+}, { timestamps: true });
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+## API Endpoints 
+#### Order
+- addOrder 
+
+#### Product
+- getProducts
+- getProductById
+- createProduct
+
+
+## Data Shapes
+#### Product
+- name
+- description
+- price
+- imageUrl
+- countInStock
+
+#### Orders
+- name
+- address
+- payment
+- items
+- totalPrice
+
+
