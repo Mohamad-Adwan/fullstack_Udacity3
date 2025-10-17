@@ -1,4 +1,4 @@
-<div *ngIf="product">
+<!-- <div *ngIf="product">
   <h2>{{ product.name }}</h2>
   <p>{{ product.description }}</p>
   <p><strong>Price:</strong> ${{ product.price }}</p>
@@ -6,4 +6,12 @@
   <br />
  <button (click)="product && addToCart(product)">Add to Cart</button>
 
+</div> -->
+<div *ngIf="product" >
+  <button class="close-btn" (click)="close()">✖ Close</button>
+  <h2>{{ product.name }}</h2>
+  <img [src]="product.imageUrl" alt="{{ product.name }}" class="detail-image" />
+  <p>{{ product.description }}</p>
+  <p><strong>Price:</strong> ${{ product.price }}</p>
+  <button (click)="addToCart(product)">Add to Cart</button>
 </div>

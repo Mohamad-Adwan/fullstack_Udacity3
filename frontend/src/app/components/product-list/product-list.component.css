@@ -58,3 +58,87 @@
 .product a:hover {
   background-color: #0056b3;
 }
+
+.products {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.products h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* 🔍 Search bar styling */
+.form-control {
+  width: 96%;
+  padding: 12px 16px;
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+/* 🛍️ Product cards */
+.product {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: #fafafa;
+}
+
+.product:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+  display: block;
+  margin: 12px auto;
+  border-radius: 8px;
+  max-height: 150px;
+  object-fit: contain;
+}
+
+.product h3 {
+  margin-top: 0;
+  color: #222;
+  font-weight: 600;
+}
+
+/* .product a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+} */
+
+.product a:hover {
+  text-decoration: underline;
+}
+
+/* 🚫 "No products found" */
+.no-results {
+  text-align: center;
+  font-size: 18px;
+  color: #888;
+  margin-top: 40px;
+  font-style: italic;
+}

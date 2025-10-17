@@ -41,6 +41,13 @@ Simple Store is a basic e-commerce project where users can browse products, add 
 - **MongoDB**
 - **Angular CLI**
 
+## Project Structure
+- backend/         - Node.js API with Express and MongoDB
+- frontend/        - Angular SPA
+  - components/    - Angular components (product list, product detail, checkout)
+  - services/      - Services for API calls and cart management
+  - models/        - TypeScript models for products and orders
+
 ---
 ```
 my-store/
@@ -119,7 +126,9 @@ const productSchema = new mongoose.Schema({
   countInStock: { type: Number, default: 0 }
 }, { timestamps: true });
 ```
-
+## Notes
+- Parent-child communication uses Angular @Input and @Output
+- Can be extended with user authentication and order management
 
 
 ## API Endpoints 
